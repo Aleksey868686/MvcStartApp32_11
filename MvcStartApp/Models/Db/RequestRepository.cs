@@ -27,5 +27,11 @@ namespace MvcStartApp.Models.Db
             // Сохранение изенений
             await _context.SaveChangesAsync();
         }
+        //
+        public async Task<Request[]> GetRequestLogs()
+        {
+            // Получим все запросы
+            return await _context.Requests.ToArrayAsync();
+        }
     }
 }

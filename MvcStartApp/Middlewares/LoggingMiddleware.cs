@@ -23,6 +23,8 @@ namespace MvcStartApp.Middlewares
         {
             // Для логирования данных о запросе используем свойста объекта HttpContext
             Console.WriteLine($"[{DateTime.Now}]: New request to http://{context.Request.Host.Value + context.Request.Path}");
+
+            // Для логирования запросов в БД
             await _requestRepo.AddRequest(context);
 
             // Передача запроса далее по конвейеру
